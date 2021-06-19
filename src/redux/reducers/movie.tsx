@@ -4,13 +4,18 @@ import {
   FETCH_MOVIE_FAILURE,
 } from "../types/movie";
 
-const initialState = {
+type Action = {
+  type: string;
+  payload: [] | string;
+};
+
+const initialState: any = {
   movie: [],
   loading: true,
   error: "",
 };
 
-const movieReducer = (state = initialState, action) => {
+const movieReducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case FETCH_MOVIE_REQ:
       return {

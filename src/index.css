@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Raleway:wght@200;300;400;500;600;700;800&display=swap");
 
 :root {
-  --background: #0f1829;
+  /* --background: #0f1829; */
+  --background: #333;
   --gray: #c4c4c4;
 }
 
@@ -20,30 +21,119 @@ body {
 }
 
 .container {
-  margin: 50px auto;
+  margin: 0 auto;
   max-width: 1100px;
   text-align: center;
+  padding: 0 40px;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
 li {
   list-style: none;
 }
 
-/* ----- App styling ------ */
-
-.main .input {
-  background: #4d4d4d;
-  color: #c4c4c4;
-  width: 55%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 0.5px solid #333;
+/* Navbar */
+.navbar {
+  background-color: #1c1c1c;
+  color: #f4f4f4;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.main h1 {
-  font-size: 60px;
-  font-weight: 300;
-  margin: 35px 0;
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #828282;
+  font-size: 18px;
+  margin: 10px;
+}
+
+.navbar a:hover {
+  color: var(--primary-light);
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+
+/* ----- Home Section (IMG) ------ */
+
+/* Home Section (Img) */
+.home-section {
+  /* margin: 50px; */
+  background-image: url("https://images.pexels.com/photos/5094564/pexels-photo-5094564.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 500px;
+}
+
+.home-section {
+  position: relative;
+}
+
+.home-section::after {
+  /* position: fixed; */
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #333;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.home-section > * {
+  z-index: 10;
+  position: relative;
+}
+
+.home-section .home-section-inner {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  padding: 170px 0;
+}
+
+/* ----- App styling ------ */
+.main {
+  padding-top: 0px;
+}
+
+.home-section-inner .input {
+  background: rgba(0, 0, 0, 0.5);
+  color: #c4c4c4;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.home-section-inner h1 {
+  font-size: 35spx;
+  font-weight: 500;
+  margin: 20px 0;
 }
 
 .matches {
@@ -54,6 +144,7 @@ li {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-top: 95px;
 }
 
 .default-picture {
